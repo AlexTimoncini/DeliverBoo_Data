@@ -1,0 +1,49 @@
+{
+    "types" : [
+        {
+            "name": "Fast Food"
+        },
+        {
+            "name": "American"
+        },
+        {
+            "name": "French"
+        },
+        {
+            "name": "Italian"
+        },
+        {
+            "name": "Turkish"
+        },
+        {
+            "name": "Asian"
+        },
+        {
+            "name": "Thai"
+        },
+        {
+            "name": "Kebab"
+        },
+        {
+            "name": "Arabic"
+        },
+        {
+            "name": "Pizzeria"
+        },
+        {
+            "name": "Bistrot"
+        },
+        {
+            "name": "Mexican"
+        },
+        {
+            "name": "Japanese"
+        },
+        {
+            "name": "Sushi"
+        },
+        {
+            "name": "Chinese"
+        }
+    ]
+}

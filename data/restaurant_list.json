@@ -7,6 +7,8 @@
             "vat_number": "LU12345678",
             "address": "10 rue Willy Goergen",
             "type_list": ["Fast Food", "American"],
+            "logo": "/booldonalds.png",
+            "image": "",
             "dish_list": [
                 {
                     "name": "BoolCheeseBurger",
@@ -14,7 +16,8 @@
                     "price": 7.99,
                     "photo": "https://www.mcdonalds.it/sites/default/files/styles/compressed/public/products/cheeseburger--hero-mob.jpg.webp?itok=zUC2Hd7n",
                     "availability": true,
-                    "ingredient_list": ["Bread", "Steak", "Cheese", "Onion", "Pickle", "Ketchup", "Senape"]
+                    "ingredient_list": ["Bread", "Steak", "Cheese", "Onion", "Pickle", "Ketchup", "Senape"],
+                    "category": "Burger"
                 },
                 {
                     "name": "BoolDoubleBurger",
@@ -22,7 +25,8 @@
                     "price": 9.99,
                     "photo": "https://www.mcdonalds.it/sites/default/files/styles/compressed/public/products/double-cheeseburger--hero-mob.jpg.webp?itok=h2Sb6fQv",
                     "availability": true,
-                    "ingredient_list": ["Bread", "Steak", "Cheese", "Onion", "Pickle", "Ketchup", "Senape"]
+                    "ingredient_list": ["Bread", "Steak", "Cheese", "Onion", "Pickle", "Ketchup", "Senape"],
+                    "category": "Burger"
                 },
                 {
                     "name": "BoolChickenBurger",
@@ -30,7 +34,8 @@
                     "price": 6.99,
                     "photo": "https://www.mcdonalds.it/sites/default/files/styles/compressed/public/products/chickenburger--hero-mob.jpg.webp?itok=3ii-KClB",
                     "availability": false,
-                    "ingredient_list": ["Bread", "Chicken", "Mayonnaise"]
+                    "ingredient_list": ["Bread", "Chicken", "Mayonnaise"],
+                    "category": "Burger"
                 },
                 {
                     "name": "BoolFishBurger",
@@ -38,7 +43,8 @@
                     "price": 4.99,
                     "photo": "https://www.mcdonalds.it/sites/default/files/styles/compressed/public/products/filet-o-fish--hero-mob.jpg.webp?itok=kxKSQ52V",
                     "availability": true,
-                    "ingredient_list": ["Bread", "Cod", "Mayonnaise"]
+                    "ingredient_list": ["Bread", "Cod", "Mayonnaise"],
+                    "category": "Burger"
                 },
                 {
                     "name": "BoolBaconBurger",
@@ -46,7 +52,8 @@
                     "price": 9.99,
                     "photo": "https://www.mcdonalds.it/sites/default/files/styles/compressed/public/products/gran-crispy-mcbacon--hero-mob_0.jpg.webp?itok=IxGQroUp",
                     "availability": true,
-                    "ingredient_list": ["Bread", "Steak", "Cheese", "Onion", "Bacon", "Ketchup", "Senape"]
+                    "ingredient_list": ["Bread", "Steak", "Cheese", "Onion", "Bacon", "Ketchup", "Senape"],
+                    "category": "Burger"
                 },
                 {
                     "name": "BoolSelectionBurger",
@@ -54,7 +61,8 @@
                     "price": 10.99,
                     "photo": "https://www.mcdonalds.it/sites/default/files/styles/compressed/public/products/myselection-chicken-avocado--hero-mob.jpg?itok=6B4inxSd",
                     "availability": false,
-                    "ingredient_list": ["Bread", "Chicken", "Avocado", "Bacon", "Radish", "Tomato", "Cheese"]
+                    "ingredient_list": ["Bread", "Chicken", "Avocado", "Bacon", "Radish", "Tomato", "Cheese"],
+                    "category": "Burger"
                 },
                 {
                     "name": "BoolFries",
@@ -62,7 +70,8 @@
                     "price": 3.99,
                     "photo": "https://www.mcdonalds.it/sites/default/files/styles/compressed/public/products/patate-regolari_mobile_0.jpg.webp?itok=dHGCytPo",
                     "availability": true,
-                    "ingredient_list": ["Potato"]
+                    "ingredient_list": ["Potato"],
+                    "category": "Sides"
                 },
                 {
                     "name": "BoolNuggets",
@@ -70,7 +79,8 @@
                     "price": 2.99,
                     "photo": "https://www.mcdonalds.it/sites/default/files/styles/compressed/public/products/chicken-mcnuggets_mobile.jpg.webp?itok=-3FSOlc1",
                     "availability": true,
-                    "ingredient_list": ["Chicken", "Bread"]
+                    "ingredient_list": ["Chicken", "Bread"],
+                    "category": "Sides"
                 },
                 {
                     "name": "Water",
@@ -78,7 +88,8 @@
                     "price": 0.99,
                     "photo": "https://www.mcdonalds.it/sites/default/files/styles/compressed/public/products/acqua-lilla_mobile.jpg.webp?itok=rSdWmsOF",
                     "availability": true,
-                    "ingredient_list": ["water"]
+                    "ingredient_list": ["water"],
+                    "category": "Drink"
                 },
                 {
                     "name": "BoolCoke",
@@ -86,7 +97,8 @@
                     "price": 3.99,
                     "photo": "https://www.mcdonalds.it/sites/default/files/styles/compressed/public/products/cup-bibite-mobile_0.jpg.webp?itok=zUg1ivDC",
                     "availability": true,
-                    "ingredient_list": ["water", "sugar"]
+                    "ingredient_list": ["water", "sugar"],
+                    "category": "Drink"
                 }
             ],
             "order_list": [
@@ -111,6 +123,8 @@
             "vat_number": "LU23456789",
             "address": "12 Rue Jean Engling, L-1466",
             "type_list": ["Pizzeria", "Italian"],
+            "logo": "/pizzeria_da_gino.png",
+            "image": "",
             "dish_list": [
                 {
                     "name": "Pizza Margherita",
@@ -118,7 +132,8 @@
                     "price": 8.99,
                     "photo": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Pizza_Margherita_stu_spivack.jpg",
                     "availability": true,
-                    "ingredient_list": ["Tomato", "Cheese", "Basil"]
+                    "ingredient_list": ["Tomato", "Cheese", "Basil"],
+                    "category": "Pizza"
                 },
                 {
                     "name": "Pizza Diavola",
@@ -126,7 +141,8 @@
                     "price": 9.99,
                     "photo": "https://s3.eu-central-1.amazonaws.com/quomi/media/133057/conversions/Pizza-Diavola-thumb-big.jpg",
                     "availability": true,
-                    "ingredient_list": ["Tomato", "Cheese", "Spicy salami", "Chili pepper"]
+                    "ingredient_list": ["Tomato", "Cheese", "Spicy salami", "Chili pepper"],
+                    "category": "Pizza"
                 },
                 {
                     "name": "Pizza Capricciosa",
@@ -134,7 +150,8 @@
                     "price": 10.99,
                     "photo": "https://i0.wp.com/www.piccolericette.net/piccolericette/wp-content/uploads/2017/12/3240_Pizza.jpg?resize=895%2C616&ssl=1",
                     "availability": true,
-                    "ingredient_list": ["Tomato", "Cheese", "Ham", "Mushroom", "Artichoke", "Olive"]
+                    "ingredient_list": ["Tomato", "Cheese", "Ham", "Mushroom", "Artichoke", "Olive"],
+                    "category": "Pizza"
                 }
             ],
             "order_list": [
@@ -159,6 +176,8 @@
             "vat_number": "LU34567890",
             "address": "121 Av. De La Faiencerie, L-1511",
             "type_list": ["Chinese", "Asian", "Japanese", "Sushi", "French"],
+            "logo": "/fusion_baguette.png",
+            "image": "",
             "dish_list": [
                 {
                     "name": "Nigiri Salmon Sushi",
@@ -166,7 +185,8 @@
                     "price": 14.99,
                     "photo": "https://cdn.cook.stbm.it/thumbnails/ricette/144/144483/hd750x421.jpg",
                     "availability": true,
-                    "ingredient_list": ["Salmon", "Rice", "Vinegar"]
+                    "ingredient_list": ["Salmon", "Rice", "Vinegar"],
+                    "category": "Sushi"
                 },
                 {
                     "name": "Tonkotsu Ramen",
@@ -174,7 +194,8 @@
                     "price": 12.99,
                     "photo": "https://www.foodandwine.com/thmb/0AXGLeY6dYnY8sEXFqxBa8opDrs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Tonkotsu-Ramen-FT-BLOG1122-8fe6c12d609a4fd4ab246bea3aae140e.jpg",
                     "availability": true,
-                    "ingredient_list": ["Pork", "Pasta", "Onion", "Egg"]
+                    "ingredient_list": ["Pork", "Pasta", "Onion", "Egg"],
+                    "category": "Ramen"
                 },
                 {
                     "name": "Shrimp Tempura",
@@ -182,7 +203,8 @@
                     "price": 13.99,
                     "photo": "https://www.sidechef.com/recipe/b9707c31-d58d-4f69-a76d-9d029c6ee8a7.jpg?d=1408x1120",
                     "availability": true,
-                    "ingredient_list": ["Shrimp", "Batter"]
+                    "ingredient_list": ["Shrimp", "Batter"],
+                    "category": "Sides"
                 }
             ],
             "order_list": [
@@ -208,6 +230,8 @@
             "vat_number": "LU45678901",
             "address": "53a Cote D'eich, L-1450",
             "type_list": ["Mexican"],
+            "logo": "/me_prendi_fuego.png",
+            "image": "",
             "dish_list": [
                 {
                     "name": "Chilaquiles",
@@ -215,7 +239,8 @@
                     "price": 5.99,
                     "photo": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-424772_11-65058a6.jpg?quality=90&webp=true&resize=300,272",
                     "availability": true,
-                    "ingredient_list": ["Bread", "Cheese", "Onion", "Garlic", "Mais"]
+                    "ingredient_list": ["Bread", "Cheese", "Onion", "Garlic", "Mais"],
+                    "category": "Appetizer"
                 },
                 {
                     "name": "Tacos al pastor",
@@ -223,7 +248,8 @@
                     "price": 8.99,
                     "photo": "https://images.immediate.co.uk/production/volatile/sites/30/2023/01/GettyImages-1410200729-0a2afd0.jpg?quality=90&webp=true&fit=975,649",
                     "availability": true,
-                    "ingredient_list": ["Mais", "Pork", "Onion", "Pineapple" ]
+                    "ingredient_list": ["Mais", "Pork", "Onion", "Pineapple" ],
+                    "category": "Appetizer"
                 },
                 {
                     "name": "Elote",
@@ -231,7 +257,8 @@
                     "price": 2.99,
                     "photo": "https://images.immediate.co.uk/production/volatile/sites/30/2023/01/GettyImages-507452097-6-d0fddb1.jpg?quality=90&webp=true&crop=11px,1521px,3153px,2100px&fit=975,649",
                     "availability": true,
-                    "ingredient_list": ["Mais", "Lime", "Cheese"]
+                    "ingredient_list": ["Mais", "Lime", "Cheese"],
+                    "category": "sides"
                 }
             ],
             "order_list": [
@@ -257,6 +284,8 @@
             "vat_number": "LU56789012",
             "address": "464 Route De Longwy, L-4832",
             "type_list": ["Fast Food", "Mexican", "American"],
+            "logo": "/los_pollos_hermanos.png",
+            "image": "",
             "dish_list": [
                 {
                     "name": "Chicken Wings",
@@ -264,7 +293,8 @@
                     "price": 5.99,
                     "photo": "https://www.lifesambrosia.com/wp-content/uploads/Deep-Fried-Chicken-Wings-Recipe-Photo-11-scaled.jpg",
                     "availability": true,
-                    "ingredient_list": ["Chicken", "Bread", "Onion", "Paprika"]
+                    "ingredient_list": ["Chicken", "Bread", "Onion", "Paprika"],
+                    "category": "Appetizer"
                 },
                 {
                     "name": "Gus' Choice",
@@ -272,7 +302,8 @@
                     "price": 4.59,
                     "photo": "https://cdn.britannica.com/13/234013-050-73781543/rice-and-chorizo-burrito.jpg",
                     "availability": true,
-                    "ingredient_list": ["Mais", "Chicken", "Rice", "Onion", "Chili peppers" ]
+                    "ingredient_list": ["Mais", "Chicken", "Rice", "Onion", "Chili peppers" ],
+                    "category": "Burrito"
                 },
                 {
                     "name": "Gus Mashed Potato Bowl",
@@ -280,7 +311,8 @@
                     "price": 5.50,
                     "photo": "https://kitchendivas.com/wp-content/uploads/2021/02/KFC-Famous-Bowl20.jpg",
                     "availability": true,
-                    "ingredient_list": ["Potato", "Chicken", "Cheese", "Mais", "Garlic"]
+                    "ingredient_list": ["Potato", "Chicken", "Cheese", "Mais", "Garlic"],
+                    "category": "Sides"
                 }
             ],
             "order_list": [
@@ -306,6 +338,8 @@
             "vat_number": "LU67890123",
             "address": "53a Cote D'eich, L-3254",
             "type_list": ["Kebab", "Turkish", "Arabic"],
+            "logo": "/turkish_kebab.png",
+            "image": "",
             "dish_list": [
                 {
                     "name": "Wrap Kebab",
@@ -313,7 +347,8 @@
                     "price": 5.00,
                     "photo": "https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/chicken_kebab_wrap_35076_16x9.jpg",
                     "availability": true,
-                    "ingredient_list": ["Chicken", "Tomato", "Ketchup", "Carrot", "Garlic"]
+                    "ingredient_list": ["Chicken", "Tomato", "Ketchup", "Carrot", "Garlic"],
+                    "category": "Kebab"
                 },
                 {
                     "name": "Doner Kebab",
@@ -321,7 +356,8 @@
                     "price": 4.00,
                     "photo": "https://www.thespruceeats.com/thmb/o7Szsda7azjqS_7Ak-nMr_1OiI0=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/doner-kebab-recipe-4171703-hero-01-c14d8b7189df4685a50bae311317f831.jpg",
                     "availability": true,
-                    "ingredient_list": ["Steak", "Egg", "Bread", "Garlic", "Tomato", "Carrot", "Onion", "Paprika"]
+                    "ingredient_list": ["Steak", "Egg", "Bread", "Garlic", "Tomato", "Carrot", "Onion", "Paprika"],
+                    "category": "Kebab"
                 },
                 {
                     "name": "Chicken Shawarma",
@@ -329,7 +365,8 @@
                     "price": 8.00,
                     "photo": "https://www.recipetineats.com/wp-content/uploads/2017/01/Chicken-Shawarma-Wrap_3.jpg?resize=650,813",
                     "availability": true,
-                    "ingredient_list": ["Chicken", "Lemon", "Paprika", "Garlic", "Bread", "Rice"]
+                    "ingredient_list": ["Chicken", "Lemon", "Paprika", "Garlic", "Bread", "Rice"],
+                    "category": "Kebab"
                 }
             ],
             "order_list": [
@@ -355,6 +392,8 @@
             "vat_number": "LU78901234",
             "address": "95 Rue De Strasbourg, L-2561",
             "type_list": ["Bistrot", "French"],
+            "logo": "/bistrot_chez_chloe.png",
+            "image": "",
             "dish_list": [
                 {
                     "name": "Escargots",
@@ -362,7 +401,8 @@
                     "price": 15.99,
                     "photo": "https://dreamsinparis.com/wp-content/uploads/2022/01/Escargots-1024x768.jpg",
                     "availability": true,
-                    "ingredient_list": ["Butter", "Snail", "Garlic", "Parsley"]
+                    "ingredient_list": ["Butter", "Snail", "Garlic", "Parsley"],
+                    "category": "Appetizer"
                 },
                 {
                     "name": "Les Cuisses De Grenouille",
@@ -370,7 +410,8 @@
                     "price": 12.99,
                     "photo": "https://dreamsinparis.com/wp-content/uploads/2022/01/Les-cuisses-de-Grenouille-Frog-legs-1024x768.jpg",
                     "availability": true,
-                    "ingredient_list": ["Frog", "Butter", "Garlic", "Parsley"]
+                    "ingredient_list": ["Frog", "Butter", "Garlic", "Parsley"],
+                    "category": "Appetizer"
                 },
                 {
                     "name": "Roquefort",
@@ -378,7 +419,8 @@
                     "price": 3.99,
                     "photo": "https://dreamsinparis.com/wp-content/uploads/2022/01/Roquefort-blue-cheese-1024x768.jpg",
                     "availability": true,
-                    "ingredient_list": ["Cheese"]
+                    "ingredient_list": ["Cheese"],
+                    "category": "Appetizer"
                 }
             ],
             "order_list": [
@@ -404,6 +446,8 @@
             "vat_number": "LU89012345",
             "address": "67 Avenue De La Gare, L-4130",
             "type_list": ["Thai", "Asian"],
+            "logo": "/thai-food.jpg",
+            "image": "",
             "dish_list": [
                 {
                     "name": "Chicken Satay",
@@ -411,7 +455,8 @@
                     "price": 8.59,
                     "photo": "https://www.thespruceeats.com/thmb/FnXzJ8TJot1llYPINZ7F1BL3eqs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/chicken-satay-recipe-3217478-herp-01-e78b544a0775490ea78b856f83a949bd.jpg",
                     "availability": true,
-                    "ingredient_list": ["Chicken", "Lemon", "Garlic"]
+                    "ingredient_list": ["Chicken", "Lemon", "Garlic"],
+                    "category": "Appetizer"
                 },
                 {
                     "name": "Fillet of Fished in Banana Leaf",
@@ -419,7 +464,8 @@
                     "price": 9.99,
                     "photo": "https://www.thespruceeats.com/thmb/ykVcLHhMAhXWnbCYW3VZWQ9KSaE=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/thai-fish-fillet-baked-in-banana-leaf-3217405-hero-01-8cb30145c76f478ca7049c2ad1dee82e.jpg",
                     "availability": true,
-                    "ingredient_list": ["Cod", "Coconut", "Rice", "Potato"]
+                    "ingredient_list": ["Cod", "Coconut", "Rice", "Potato"],
+                    "category": "Fish"
                 },
                 {
                     "name": "Mini Shrimp Lettuce Wraps",
@@ -427,7 +473,8 @@
                     "price": 3.99,
                     "photo": "https://www.thespruceeats.com/thmb/GPecU3V__toiFIJgZdRhD1xnNU0=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/mini-shrimp-lettuce-wraps-3217683-hero-01-593a2d390eb84b87b8b1904ce4f86e4c.jpg",
                     "availability": true,
-                    "ingredient_list": ["Shrimp", "Lettuce", "Lime"]
+                    "ingredient_list": ["Shrimp", "Lettuce", "Lime"],
+                    "category": "Appetizer"
                 }
             ],
             "order_list": [
@@ -453,6 +500,8 @@
             "vat_number": "LU87654321",
             "address": "23 Rue De Napoleon, L-1261",
             "type_list": ["Italian"],
+            "logo": "/osteria_cacina.png",
+            "image": "",
             "dish_list": [
                 {
                     "name": "Carbonara",
@@ -460,7 +509,8 @@
                     "price": 6.99,
                     "photo": "https://blog.giallozafferano.it/dulcisinforno/wp-content/uploads/2021/03/Carbonara-ricetta-5328.jpg",
                     "availability": true,
-                    "ingredient_list": ["Pasta", "Egg", "Pork", "Cheese"]
+                    "ingredient_list": ["Pasta", "Egg", "Pork", "Cheese"],
+                    "category": "Pasta"
                 },
                 {
                     "name": "Amatriciana",
@@ -468,7 +518,8 @@
                     "price": 6.99,
                     "photo": "https://blog.giallozafferano.it/dulcisinforno/wp-content/uploads/2021/10/Bucatini-all-amatriciana-4802.jpg",
                     "availability": true,
-                    "ingredient_list": ["Pasta", "Tomato", "Pork", "Onion"]
+                    "ingredient_list": ["Pasta", "Tomato", "Pork", "Onion"],
+                    "category": "Pasta"
                 },
                 {
                     "name": "Cacio e Pepe",
@@ -476,7 +527,8 @@
                     "price": 6.99,
                     "photo": "https://blog.giallozafferano.it/dulcisinforno/wp-content/uploads/2021/01/Pasta-cacio-e-pepe-2634.jpg",
                     "availability": true,
-                    "ingredient_list": ["Pasta", "Cheese"]
+                    "ingredient_list": ["Pasta", "Cheese"],                    
+                    "category": "Pasta"
                 }
             ],
             "order_list": [

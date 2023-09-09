@@ -221,7 +221,7 @@ L’ultima cosa che ci manca da fare è recuperare i dati dentro il localStorage
 
 Per fare ciò impostiamo un sorta di chiamata Api per gestire anche il caso in cui i dati siano corrotti (il localStorage può essere facilmente manomesso dall’utente);
 
-Se la session con chiave cart_list esiste, chiamiamo il localStorage:
+Se la session con chiave cart esiste, chiamiamo il localStorage:
 
 -se la chiamata va a buon fine salviamo i dati del localStorage dentro la variabile `cart` nei data riconvertondoli prima con un parse;
 

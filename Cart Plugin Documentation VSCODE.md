@@ -242,7 +242,7 @@ Se la session con chiave cart esiste, chiamiamo il localStorage:
 
 ## Conclusion
 
-Il modo migliore di impostare la cosa è tramite creando uno store.js che conservi cart_list, in modo da non complicarsi con props ed emit varie tra il carrello ed il menù.
+Il modo migliore di impostare la cosa è creando uno store.js che conservi cart_list, in modo da non complicarsi con props ed emit varie tra il carrello ed il menù.
 
 Ecco il template finale utilizzano lo store.js.
 

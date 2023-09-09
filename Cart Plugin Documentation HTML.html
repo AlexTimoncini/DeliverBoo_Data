@@ -765,7 +765,7 @@ methods: {
       }
     }
     // localStorage.clear();
-  },</code></pre><h2 id="59a32367-5ec9-4959-91d5-821171594f24" class="">Conclusion</h2><p id="cbc60e7c-5830-4235-83bf-18142e7b3879" class="">Il modo migliore di impostare la cosa è tramite creando uno store.js che conservi cart_list, in modo da non complicarsi con props ed emit varie tra il carrello ed il menù.</p><p id="1b3e9645-03d6-4af3-bfb2-a6913adc3efe" class="">Ecco il template finale utilizzano lo store.js.</p><h2 id="bea01519-658c-4bd6-b358-3d31fc71df0f" class="">Final Example</h2><h3 id="9cb5914e-51ce-4af4-952d-46d814b15f74" class="">Menu’ Component</h3><pre id="1231a18d-717b-4b27-9833-35b2501b4ceb" class="code"><code>&lt;script&gt;
+  },</code></pre><h2 id="59a32367-5ec9-4959-91d5-821171594f24" class="">Conclusion</h2><p id="cbc60e7c-5830-4235-83bf-18142e7b3879" class="">Il modo migliore di impostare la cosa è creando uno store.js che conservi cart_list, in modo da non complicarsi con props ed emit varie tra il carrello ed il menù.</p><p id="1b3e9645-03d6-4af3-bfb2-a6913adc3efe" class="">Ecco il template finale utilizzano lo store.js.</p><h2 id="bea01519-658c-4bd6-b358-3d31fc71df0f" class="">Final Example</h2><h3 id="9cb5914e-51ce-4af4-952d-46d814b15f74" class="">Menu’ Component</h3><pre id="1231a18d-717b-4b27-9833-35b2501b4ceb" class="code"><code>&lt;script&gt;
 import { store } from &#x27;./store&#x27;
 import Cart from &#x27;./components/Cart.vue&#x27;
 export default {

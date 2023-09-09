@@ -790,23 +790,7 @@ export default {
 						store.cart_list.push(dishObj);
 				}
 				this.saveCart();
-		}&lt;div class=&quot;cart&quot;&gt;
-    &lt;h1&gt;cart&lt;/h1&gt;
-    &lt;li v-for=&quot;(dish, index) in store.cart_list&quot;&gt;
-      &lt;span&gt;{{ dish.name }} &lt;/span&gt;
-      &lt;span&gt;{{ dish.price }} € &lt;/span&gt;
-      &lt;span&gt; {{ dish.quantity }} X&lt;/span&gt;
-      &lt;button type=&quot;button&quot; @click=&quot;removeDishFromCart(index, 0)&quot;&gt; Delete&lt;/button&gt;
-    &lt;/li&gt;
-  &lt;/div&gt;&lt;div class=&quot;cart&quot;&gt;
-    &lt;h1&gt;cart&lt;/h1&gt;
-    &lt;li v-for=&quot;(dish, index) in store.cart_list&quot;&gt;
-      &lt;span&gt;{{ dish.name }} &lt;/span&gt;
-      &lt;span&gt;{{ dish.price }} € &lt;/span&gt;
-      &lt;span&gt; {{ dish.quantity }} X&lt;/span&gt;
-      &lt;button type=&quot;button&quot; @click=&quot;removeDishFromCart(index, 0)&quot;&gt; Delete&lt;/button&gt;
-    &lt;/li&gt;
-  &lt;/div&gt;
+		},
     saveCart(){
       const parsed = JSON.stringify(this.cart_list);
       localStorage.setItem(&#x27;cart&#x27;, parsed);

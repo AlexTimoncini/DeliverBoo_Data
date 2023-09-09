@@ -121,7 +121,7 @@ Andiamo ora a gestire la casistica in cui un andiamo ad aggiungere un piatto gi�
     
     Nel caso in cui il piatto sia nuovo, la creiamo e settiamo a 1 `dishObj.quantity = 1;`;
     
-    > Se invece il piatto è già esistente potremmo pensare di fare un semplice `dishObj++` e salvare, il problema è la modifica dei dati dentro il localStorage che è, impostato il codice in questo modo, impossibile;
+    > Se invece il piatto è già esistente potremmo pensare di fare un semplice `dishObj.quantity++` e salvare, il problema è la modifica dei dati dentro il localStorage che è, impostato il codice in questo modo, impossibile;
     > 
     
     Gestiamo questo caso andando per prima cosa a cercare l’elemento uguale per ottenere la sua `quantity` sempre tramite un `find()` identico a quello dentro l’if e lo salviamo dentro la variabile `dish` ;

@@ -223,7 +223,7 @@ Per fare ciò impostiamo un sorta di chiamata Api per gestire anche il caso in c
 
 Se la session con chiave cart esiste, chiamiamo il localStorage:
 
--se la chiamata va a buon fine salviamo i dati del localStorage dentro la variabile `cart` nei data riconvertondoli prima con un parse;
+-se la chiamata va a buon fine salviamo i dati del localStorage dentro la variabile `cart_list` nei data riconvertondoli prima con un parse;
 
 -se la chiamata da errori o i dati sono corrotti, rimuoviamo tutti i dati presenti nella sessione con chiave `cart`;
 

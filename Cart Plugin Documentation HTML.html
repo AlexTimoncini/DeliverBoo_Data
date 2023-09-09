@@ -1,0 +1,891 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Cart Plugin</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="880bed59-f619-43c9-a03b-b030e69a2759" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/gradients_11.jpg" style="object-position:center 40%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🛒</span></div><h1 class="page-title">Cart Plugin</h1><p class="page-description"></p></header><div class="page-body"><p id="51988a69-5d81-417b-bec8-3d9c70609536" class="">By <span style="border-bottom:0.05em solid">Alex Timoncini</span></p><div id="6b85563c-2d70-4c0f-b31a-45006bb134bd" class="column-list"><div id="c0eba1a6-8144-4275-9dce-e5710dfba29c" style="width:8.333333333333332%" class="column"><p id="0fecc978-5946-4af5-8363-007acb645dc4" class="">
+</p><p id="2950483e-2a95-46b3-aa48-e604c1f180a3" class="">
+</p></div><div id="22c5a855-1145-4d59-8b61-199a9147347f" style="width:70.83333333333333%" class="column"><h1 id="1ba98dbb-49eb-4ec1-8800-004b0f48f415" class="">Documentation</h1><p id="91dd41bf-727d-42f6-9f3d-e9da26da4bac" class="">Welcome to the <code>Cart Plugin</code> Documentation! </p><p id="d5dbd62e-9609-444c-9bae-bf5eda09c7ab" class="">Ho creato un breve descrizione per facilitare l’impementazione del carello per DeliverBoo in <code>vue.js</code>. </p><p id="f981cff6-adde-4395-ba1a-f6db7cadcc28" class="">La tecnologia utilizzata é simile alla session in PHP con leggere differenze,  si chiama LocalStorage su JS.</p><blockquote id="cf5caee1-ec80-423c-9044-371bbf1a1197" class="block-color-blue_background">
+📘 Utilizziamo LocalStorage invece che SessionStorage perchè in questo modo i dati salvati non hanno scadenza.
+</blockquote><h1 id="ab326933-fe4f-4560-9372-f69724c51f3b" class="">&lt;template&gt;&lt;/template&gt;</h1><p id="28fce5f8-3c5e-4034-8e55-67a1e75cdca2" class="">Iniziamo Implementando il codice html nel componente in cui ci sarà l’elenco iniziale dei piatti in vendità (es: menù dentro la restaurant.show);</p><p id="e52a9de8-8bc7-483d-a541-7524780380ec" class="">Aggiungiamo un semplice lista chiamata menù che elenca tutti i piatti forniti (nel nostro caso tramite chiamata api);</p><p id="187deb27-f3c1-4503-aaef-23b88c124d28" class="">Inseriamo poi un evento al click per ogni del piatto che vogliamo aggiungere al carello chiamando la funzione <code>addDishToCart(dish)</code> e passandogli l’oggetto <code>dish</code> ;</p><pre id="b19f0fba-ab0c-44d6-9027-2da855228474" class="code"><code>&lt;template&gt;
+	&lt;ul id=&quot;menu&quot;&gt;
+	  &lt;li v-for=&quot;dish in dish_list&quot; @click=&quot;addDishToCart(dish)&quot;&gt;
+	    &lt;span&gt;{{ dish.name }}&lt;/span&gt;
+	    &lt;img :src=&quot;dish.photo&quot;&gt;
+	    &lt;span&gt;{{ dish.price }} €&lt;/span&gt;
+	  &lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/template&gt;</code></pre><h1 id="553ab8cd-b933-412a-8b4e-61828364ef9c" class="">&lt;script&gt;&lt;/script&gt;</h1><h2 id="afd2590e-0577-4efe-b513-2652d70fb509" class="">methods : {}</h2><h3 id="315a0d95-f06f-44db-b210-6f25babd7290" class=""><mark class="highlight-gray">saveCart()</mark></h3><blockquote id="dbdcdfc7-674f-4e80-b73e-a6bb2238dcf2" class="">Questa funzione ci servirà ogni volta che aggiungiamo, modifichiamo o rimuoviamo oggetti nel carrello per salvare le modifiche dentro la sessione;</blockquote><p id="4f2da57b-2f93-4e8e-97c6-a103fa68dde1" class="">Partiamo ora dalla funzione <code>saveCart()</code>;</p><p id="3bfc3cb9-2119-4767-8ff7-301d8e5a1da0" class="">Il localStorage (ed in generale le session in qualsiasi linguaggio) riesce a salvare solamente dati semplici (stringhe);</p><p id="e9f53061-d6aa-403a-a310-a56e001910b4" class="">Per questo motivo giochiamo con il <code>JSON.stringify</code> per tradurre l’oggetto in stringa dentro la variabile <code>parsed</code> ;</p><p id="d238b29a-63b8-4ab6-8c66-7a15369ef310" class="">Salviamo poi successivamente il dato dentro il <code>localStorage </code>aprendo una nuova chiave chiamata <code>cart</code> a cui assegnamo il valore di <code>parsed</code> ;</p><pre id="b2498fb4-1631-4243-8f25-56f24eb4073b" class="code"><code>methods: {
+	    saveCart(){
+	      const parsed = JSON.stringify(this.cart_list);
+	      localStorage.setItem(&#x27;cart&#x27;, parsed);
+	    }
+}</code></pre><h3 id="647f13fd-8eca-4c52-85e4-7b996dc76fbe" class=""><mark class="highlight-gray">addDishToCart(dishObj)</mark></h3><blockquote id="423727bb-2025-4776-8731-7aa381692756" class="">Questa funzione ci servirà per aggiungere un nuovo piatto al carrello o aumentare la quantità di un piatto già presente;</blockquote><p id="c2febec3-88a5-4da5-bf32-a5e8274ea8d0" class="">Passiamo ora alla funzione <code>addDishCart(dishObj)</code>;</p><p id="1de04976-7798-4955-8b40-12d930a790b7" class="">La funzione verrà chiamata quando l’utente cliccherà sull’icona del carrello affianco ad ogni piatto nel menù con l’intento di aggiungerlo al carrello;</p><p id="51a9190d-f9f9-490a-a7e4-357c33d27240" class="">Concentriamoci inizialmente sulla semplice funzionalità di aggiunta.</p><p id="82da0730-8b3f-41e3-9b04-150a82959101" class="">
+</p><ul id="a28e4d3e-0cd3-434e-8a82-7eacc98c3b9b" class="toggle"><li><details open=""><summary>Aggiungere un nuovo piatto</summary><p id="698aac31-2601-44c9-a50b-9407bb009949" class="">All’interno dei <code>data()</code> oltre all’elenco normale dei piatti, salviamo una variabile <code>cart_list</code> con un array vuoto;</p><p id="b4599dcc-ee67-497b-8371-27dded73b3c5" class="">La funzione si occuperà semplicemente di aggiungere a <code>cart_list</code> l’oggetto passato tramite attributo con un semplice <code>push()</code> ;</p><p id="1a4edd3e-615d-453e-9cc1-205774688c97" class="">Chiamerà poi la precreata funzione <code>saveCart()</code> per salvare <code>cart_list</code>  dentro la sessione;</p><pre id="8a7b3ec6-0753-4ae4-9595-01101b45a344" class="code"><code>data() {
+    return {
+	      dish_list: [/**Array di Oggetti contenti  Piatti**/]     
+	      cart_list: [],
+    }
+ },
+methods: {
+		addDishToCart(dishObj){
+				this.cart_list.push(dishObj);
+				this.saveCart();
+		},
+	  saveCart(){
+	      const parsed = JSON.stringify(this.cart_list);
+	      localStorage.setItem(&#x27;cart&#x27;, parsed);
+		}
+}</code></pre></details></li></ul><p id="03bbdcbb-8067-4f67-946b-7eefa1d57c5c" class="">
+</p><p id="f04ca631-ae9c-4813-bb7b-d79e248ce385" class="">Andiamo ora a gestire la casistica in cui un andiamo ad aggiungere un piatto già inserito per evitare di duplicare il piatto</p><p id="e81de3e5-0e53-43af-be4b-5df9927ee5ff" class="">
+</p><ul id="050f03a7-d2ad-40f8-b9a6-4f554da97e4f" class="toggle"><li><details open=""><summary>Aggiungere un piatto esistente</summary><p id="a328b2e4-08b8-4022-8b62-790d79d6da49" class="">Per prima cosa andiamo a verificare con un <code>if()</code> se il piatto è già esistente;</p><p id="e6e92b45-b630-44db-aef3-f4f5e4bfa2d1" class="">Salviamo dentro <code>cart</code> l’array presente dentro il localStorage salvato a chiave <code>cart</code> ;</p><p id="d2d4cfdc-c191-4604-8679-8c8f23c480f8" class="">Ricordandoci che per salvarlo nel localStorage abbiamo utilizzato il <code>JSON.stringify</code> riconvertiamolo ad array di oggetti per poterci iterare tramite <code>JSON.parse</code> ;</p><blockquote id="587b86a6-edbd-4336-8bf8-83ebd8273345" class=""><code><strong>|| []</strong></code>: Questa parte della riga di codice è un operatore logico OR (<code><strong>||</strong></code>). Se la chiave <code><strong>&#x27;cart&#x27;</strong></code> non esiste nel <code><strong>localStorage</strong></code> o se il valore è <code>null</code> (ad esempio, se non è stato ancora impostato), il <code><strong>localStorage.getItem(&#x27;cart&#x27;)</strong></code> restituirà <code><strong>null</strong></code>. In questo caso, per evitare errori, assegniamo un array vuoto <code><strong>[]</strong></code> alla variabile <code><strong>cart</strong></code>. Quindi, se il <code><strong>localStorage</strong></code> è vuoto o non contiene dati validi, <code>cart</code><code><strong> </strong></code>sarà un array vuoto su cui possiamo comunque lavorare.</blockquote><p id="d098841b-5576-44b8-8d8d-55f2ee4d363c" class="">Apriamo ora l’<code>if</code>  avente come condizione l’esistenza dell’attributo passato <code>dishObj</code> dentro l’array salvato in <code>cart</code> ;</p><p id="79f60d7b-d9e0-488e-9bcf-afe9d84c092c" class="">Usiamo <code>find()</code> per iterare dentro <code>cart</code>, <code>find()</code> ritorna l’oggetto trovato se presento oppure <code>undefind</code> ;</p><p id="5f2f5ad6-45c3-40b3-adc1-7c99cb4e96e5" class="">Una volta impostato l’if andiamo a gestire entrambi i casi;</p><p id="86796033-0462-459f-95e7-3912f7311a71" class="">Andiamo a creare una nuova chiave dentro l’oggetto <code>dishObj </code>chiamata <code>quantity</code> che conterrà la quantità di piatti uguali dentro il carrello;</p><p id="0b089fb8-76a1-4120-928e-04452562ff8f" class="">Nel caso in cui il piatto sia nuovo, la creiamo e settiamo a 1 <code>dishObj.quantity = 1;</code>;</p><blockquote id="1730e06d-a21e-4a81-bd5f-75215fd5bbe4" class="">Se invece il piatto è già esistente potremmo pensare di fare un semplice <code>dishObj++</code> e salvare, il problema è la modifica dei dati dentro il localStorage che è, impostato il codice in questo modo, impossibile;</blockquote><p id="6c637bd7-446e-4b1b-a04a-3ea7a33670d1" class="">Gestiamo questo caso andando per prima cosa a cercare l’elemento uguale per ottenere la sua <code>quantity</code> sempre tramite un <code>find()</code> identico a quello dentro l’if e lo salviamo dentro la variabile <code>dish</code> ;</p><p id="7f2062b1-c593-4da8-8ce7-c25449d072f1" class="">Successivamente estraiamo la sua <code>quantity</code> e la aumentiamo di 1;</p><p id="636c456b-8070-4531-88d4-f9cd67cdfe7d" class="">Ora non potendo modificare direttamente il dish andiamo a eliminare tramite <code>splice()</code> il vecchio dish e aggiungiamo quello nuovo tramite <code>push()</code> per fare ciò otteniamo prima la posizione del dish tramite un semplice <code>findIndex()</code> ;</p><pre id="b3095b68-7e7d-44eb-ac06-2625c6b27a30" class="code"><code>data() {
+    return {
+	      dish_list: [/**Array di Oggetti contenti  Piatti**/]     
+	      cart_list: [],
+    }
+ },
+methods: {
+		addDishToCart(dishObj){
+				let cart = JSON.parse(localStorage.getItem(&#x27;cart&#x27;)) || [];
+				if( (cart.find(item) =&gt; item.name === dishObj.name)) !== undefined ){
+						let dish = cart.find((item) =&gt; item.name === dishObj.name);
+		        dishObj.quantity = dish.quantity + 1;
+						let dishIndex = cart.findIndex((item) =&gt; item.name === dishObj.name);
+		        this.cart_list.splice(dishIndex, 1);
+		        this.cart_list.push(dishObj);
+				else{
+						dishObj.quantity = 1;
+						this.cart_list.push(dishObj);
+				}
+				this.saveCart();
+		},
+	  saveCart(){
+	      const parsed = JSON.stringify(this.cart_list);
+	      localStorage.setItem(&#x27;cart&#x27;, parsed);
+		}
+}</code></pre><p id="d52319f9-9a9e-4289-b3ee-817e1586f676" class="">
+</p></details></li></ul><h3 id="8f21201c-cd71-440a-b8ba-9adca045be77" class=""><mark class="highlight-gray">removeDishFromCart(dishIndex)</mark></h3><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="96332e13-7313-438c-9cf0-9562a364564a"><div style="font-size:1.5em"><span class="icon">🛒</span></div><div style="width:100%">Questa funzione andrà inserità dentro il component del carrello</div></figure><blockquote id="8a951d27-fd73-4f39-ab07-cc3ed64f9386" class="">Questa funzione ci servirà per eliminare un piatto dal carrello o diminuirne la quantità;</blockquote><p id="02207a6d-680c-4738-b2f3-1ced354999cd" class="">Passiamo ora alla funzione <code>removeDishFromCart(dishIndex, finalQuantity)</code>;</p><p id="e1926dad-18de-475c-aaae-22e1002cc593" class="">La funzione verrà chiamata all’interno del carrello e dovrà essere  passata con due attributi, per prima cosa l’index del piatto dentro il localStorage, facilmente ottenibile dal v-for con cui creerete l’elenco di elementi nel carrello.</p><blockquote id="b35e3a73-98d2-4b6a-b958-1b484909c603" class="">Se la cosa crea problemi (es: non si è sicuri della validità dell0index del v-for perchè gli elementi si spostano al reload), passate semplicemente l’intero oggetto come nel fatto nel menù per la funzione <code>addDishToCart(dishObj)</code> e poi cercate tramite un semplce <code>findIndex()</code>;</blockquote><p id="3cb17986-5bba-4690-862f-202abcfb0ece" class="">Come secondo attributo la quantità finale che il piatto dovrà avere (magari si può impostare tramite select aventi come opzioni da 0 alla quantità già presente);</p><p id="03dffdbc-d698-4c43-bda0-bdfd91da1263" class="">Se la quantità passata sarà 0, procederemo con un semplice <code>splice()</code> per rimuovere l’elemento;</p><p id="2f54e5bd-a80f-4b9a-9611-0b80b9e342b3" class="">Altrimenti se si vuole semplicemente ridurre la quantità dobbiamo per prima cosa ottenere e copiare l’oggetto dentro <code>dishCopy</code>;</p><p id="3427f49b-a9d1-4608-a536-12865447d66f" class="">Andiamo poi a modificare la quantità con quella passata nella funzione;</p><p id="494ed8dc-aad7-4400-bbfd-94b538c1f352" class="">Per ultima cosa eliminiamo il vecchio dish e pushiamo la copia modificata;</p><p id="25130c85-1565-425a-a4af-54568e455edb" class="">Terminiamo la funzione con un semplice <code>saveCart()</code>;</p><pre id="6201deda-cafe-441f-974f-c772d322020e" class="code"><code>data() {
+    return {
+	      dish_list: [/**Array di Oggetti contenti  Piatti**/]     
+	      cart_list: [],
+    }
+ },
+methods: {
+		removeDishFromCart(dishIndex, finalQuantity){
+				if(finalQuantity == 0){
+						this.cart_list.splice(dishIndex, 1);
+				} else {
+						let dishCopy = this.cart_list[dishIndex];
+						dishCopy.quantity = finalQuantity;
+						this.cart_list.splice(dishIndex, 1);
+						this.cart_list.push(dishCopy);
+				}
+				this.saveCart();
+		},
+	  saveCart(){
+	      const parsed = JSON.stringify(this.cart_list);
+	      localStorage.setItem(&#x27;cart&#x27;, parsed);
+		}
+}</code></pre><h2 id="49f8a923-5205-4a07-8961-267c3a9ff0f8" class="">mounted()</h2><p id="00568655-5646-4ff3-a97b-d6e6bae37f19" class="">L’ultima cosa che ci manca da fare è recuperare i dati dentro il localStorage e salvarli dentro la variabile <code>cart_list </code>che abbiamo usato fino ad’ora;</p><p id="c2f786c4-7b09-4d99-be16-0a2292bd18d2" class="">Per fare ciò impostiamo un sorta di chiamata Api per gestire anche il caso in cui i dati siano corrotti (il localStorage può essere facilmente manomesso dall’utente);</p><p id="b45d1c74-6e4a-409d-a590-3b3055fc172f" class="">Se la session con chiave cart_list esiste, chiamiamo il localStorage:</p><p id="d1526d36-0715-4607-a244-14c37b594cfb" class="">-se la chiamata va a buon fine salviamo i dati del localStorage dentro la variabile <code>cart</code> nei data riconvertondoli prima con un parse;</p><p id="6caf3b00-5c55-484d-8d37-ce2bc4237fea" class="">-se la chiamata da errori o i dati sono corrotti, rimuoviamo tutti i dati presenti nella sessione con chiave <code>cart</code>;</p><p id="ddac7d1e-8048-4f39-95fd-c36c2a8247ef" class="">
+</p><pre id="83f4c06c-c4f4-489a-9004-e2b288411fc4" class="code"><code> mounted() {
+    if(localStorage.getItem(&#x27;cart&#x27;)){
+      try {
+        this.cart_list = JSON.parse(localStorage.getItem(&#x27;cart&#x27;));
+      } catch(e) {
+        localStorage.removeItem(&#x27;cart&#x27;);
+      }
+    }
+    // localStorage.clear();
+  },</code></pre><h2 id="59a32367-5ec9-4959-91d5-821171594f24" class="">Conclusion</h2><p id="cbc60e7c-5830-4235-83bf-18142e7b3879" class="">Il modo migliore di impostare la cosa è tramite creando uno store.js che conservi cart_list, in modo da non complicarsi con props ed emit varie tra il carrello ed il menù.</p><p id="1b3e9645-03d6-4af3-bfb2-a6913adc3efe" class="">Ecco il template finale utilizzano lo store.js.</p><h2 id="bea01519-658c-4bd6-b358-3d31fc71df0f" class="">Final Example</h2><h3 id="9cb5914e-51ce-4af4-952d-46d814b15f74" class="">Menu’ Component</h3><pre id="1231a18d-717b-4b27-9833-35b2501b4ceb" class="code"><code>&lt;script&gt;
+import { store } from &#x27;./store&#x27;
+import Cart from &#x27;./components/Cart.vue&#x27;
+export default {
+  name: &#x27;Menu&#x27;,
+  data() {
+    return {
+      dish_list: [/**Array di Oggetti contenti  Piatti**/]     
+      store,
+    }
+  },
+  methods: {
+		addDishToCart(dishObj){
+				let cart = JSON.parse(localStorage.getItem(&#x27;cart&#x27;)) || [];
+				if( (cart.find(item) =&gt; item.name === dishObj.name)) !== undefined ){
+						let dish = cart.find((item) =&gt; item.name === dishObj.name);
+		        dishObj.quantity = dish.quantity + 1;
+						let dishIndex = cart.findIndex((item) =&gt; item.name === dishObj.name);
+		        store.cart_list.splice(dishIndex, 1);
+		        store.cart_list.push(dishObj);
+				else{
+						dishObj.quantity = 1;
+						store.cart_list.push(dishObj);
+				}
+				this.saveCart();
+		}&lt;div class=&quot;cart&quot;&gt;
+    &lt;h1&gt;cart&lt;/h1&gt;
+    &lt;li v-for=&quot;(dish, index) in store.cart_list&quot;&gt;
+      &lt;span&gt;{{ dish.name }} &lt;/span&gt;
+      &lt;span&gt;{{ dish.price }} € &lt;/span&gt;
+      &lt;span&gt; {{ dish.quantity }} X&lt;/span&gt;
+      &lt;button type=&quot;button&quot; @click=&quot;removeDishFromCart(index, 0)&quot;&gt; Delete&lt;/button&gt;
+    &lt;/li&gt;
+  &lt;/div&gt;&lt;div class=&quot;cart&quot;&gt;
+    &lt;h1&gt;cart&lt;/h1&gt;
+    &lt;li v-for=&quot;(dish, index) in store.cart_list&quot;&gt;
+      &lt;span&gt;{{ dish.name }} &lt;/span&gt;
+      &lt;span&gt;{{ dish.price }} € &lt;/span&gt;
+      &lt;span&gt; {{ dish.quantity }} X&lt;/span&gt;
+      &lt;button type=&quot;button&quot; @click=&quot;removeDishFromCart(index, 0)&quot;&gt; Delete&lt;/button&gt;
+    &lt;/li&gt;
+  &lt;/div&gt;
+    saveCart(){
+      const parsed = JSON.stringify(this.cart_list);
+      localStorage.setItem(&#x27;cart&#x27;, parsed);
+    }
+  },
+  mounted() {
+    if(localStorage.getItem(&#x27;cart&#x27;)){
+      try {
+        store.cart_list = JSON.parse(localStorage.getItem(&#x27;cart&#x27;));
+      } catch(e) {
+        localStorage.removeItem(&#x27;cart&#x27;);
+      }
+    }
+    // localStorage.clear();
+  },
+  components: {
+    HelloWorld
+  }
+}
+&lt;/script&gt;
+
+&lt;template&gt;
+&lt;nav&gt;
+  &lt;h1&gt;DeliveBoo&lt;/h1&gt;
+  &lt;Cart /&gt;
+&lt;/nav&gt;
+&lt;ul&gt;
+  &lt;li v-for=&quot;dish in dish_list&quot; @click=&quot;addDishToCart(dish)&quot;&gt;
+    &lt;span&gt;{{ dish.name }}&lt;/span&gt;
+    &lt;img :src=&quot;dish.photo&quot; alt=&quot;&quot; style=&quot;height: 50px; aspect-ratio: 1/1;&quot;&gt;
+    &lt;span&gt;{{ dish.price }} €&lt;/span&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/template&gt;</code></pre><h3 id="cdfc052c-3a77-4a38-83bc-221cf15e02ce" class="">Cart Component</h3><pre id="b0bdb871-3b12-4140-96b2-3ed97a56e889" class="code"><code>&lt;script&gt;
+import { store } from &#x27;./store&#x27;
+export default {
+  name: &#x27;Cart&#x27;,
+  data() {
+    return {   
+      store,
+    }
+  },
+  methods: {
+		removeDishFromCart(dishIndex, finalQuantity){
+				if(finalQuantity == 0){
+						this.cart_list.splice(dishIndex, 1);
+				} else {
+						let dishCopy = this.cart_list[dishIndex];
+						dishCopy.quantity = finalQuantity;
+						this.cart_list.splice(dishIndex, 1);
+						this.cart_list.push(dishCopy);
+				}
+				this.saveCart();
+		},
+    saveCart(){
+      const parsed = JSON.stringify(this.cart_list);
+      localStorage.setItem(&#x27;cart&#x27;, parsed);
+    }
+  }
+}
+&lt;/script&gt;
+
+&lt;template&gt;
+		&lt;div class=&quot;cart&quot;&gt;
+		    &lt;h1&gt;cart&lt;/h1&gt;
+		    &lt;li v-for=&quot;(dish, index) in store.cart_list&quot;&gt;
+			      &lt;span&gt;{{ dish.name }} &lt;/span&gt;
+			      &lt;span&gt;{{ dish.price }} € &lt;/span&gt;
+			      &lt;span&gt; {{ dish.quantity }} X&lt;/span&gt;
+			      &lt;button type=&quot;button&quot; @click=&quot;removeDishFromCart(index, 0)&quot;&gt; Delete&lt;/button&gt;
+		    &lt;/li&gt;
+	  &lt;/div&gt;
+&lt;/template&gt;</code></pre><h3 id="f545ddee-c676-4979-bc24-663be97cdab8" class="">Store.js</h3><pre id="72aaa2a8-30d3-46d6-a205-f7238b7cccaa" class="code"><code>import { reactive } from &#x27;vue&#x27;;
+
+export const store = reactive({
+    cart_list:  [],
+});</code></pre><p id="6b7cb795-77a9-4224-bd1c-c73d12e28107" class="">
+</p><p id="9bc849a2-b812-4106-8f5d-202abf7e9a24" class="">Contact me to learn more!</p><hr id="d6284ae6-2521-4717-a680-c8fb5c78fe6a"/><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="d17cb276-1d10-4faf-b71f-03d9b434f336"><div style="font-size:1.5em"><span class="icon">🛒</span></div><div style="width:100%"><strong>👋 Thank you for your interest in this template!
+</strong>Any questions or thoughts? You can contact me at timonciniDev<strong><mark class="highlight-blue">@gmail.com.</mark></strong><strong> </strong></div></figure></div><div id="094469b2-833e-45fd-bdc9-43cf7a20ec9a" style="width:20.8333333333333%" class="column"><p id="e0194941-3705-4dc4-8437-194cb42062f9" class="">
+</p><p id="51a5f486-b0f8-442a-916a-085a99440cda" class="">Table of Contents</p><hr id="2407d1db-138c-464a-bb73-817cf89af388"/><nav id="155366e7-e57f-448c-b497-2d3073ffb778" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#1ba98dbb-49eb-4ec1-8800-004b0f48f415">Documentation</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#ab326933-fe4f-4560-9372-f69724c51f3b">&lt;template&gt;&lt;/template&gt;</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#553ab8cd-b933-412a-8b4e-61828364ef9c">&lt;script&gt;&lt;/script&gt;</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#afd2590e-0577-4efe-b513-2652d70fb509">methods : {}</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#315a0d95-f06f-44db-b210-6f25babd7290"><mark class="highlight-gray">saveCart()</mark></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#647f13fd-8eca-4c52-85e4-7b996dc76fbe"><mark class="highlight-gray">addDishToCart(dishObj)</mark></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#8f21201c-cd71-440a-b8ba-9adca045be77"><mark class="highlight-gray">removeDishFromCart(dishIndex)</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#49f8a923-5205-4a07-8961-267c3a9ff0f8">mounted()</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#59a32367-5ec9-4959-91d5-821171594f24">Conclusion</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#bea01519-658c-4bd6-b358-3d31fc71df0f">Final Example</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#9cb5914e-51ce-4af4-952d-46d814b15f74">Menu’ Component</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#cdfc052c-3a77-4a38-83bc-221cf15e02ce">Cart Component</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#f545ddee-c676-4979-bc24-663be97cdab8">Store.js</a></div></nav><p id="67d2a958-c438-4805-b3ff-f6025dbaff52" class="">
+</p></div></div><p id="1f0a4580-32dc-4d72-9e1f-d2bc35786ea2" class="">
+</p></div></article></body></html>

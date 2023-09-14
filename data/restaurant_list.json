@@ -5,10 +5,13 @@
             "password": "BestInTown99",
             "email": "boolDonald@customer.it",
             "vat_number": "LU12345678",
+            "phone": "+352 20 22 37 96",
+            "description": 
+            "Booldonalds Scary Cute is a unique fast-food destination that combines the thrill of Halloween with a dash of cuteness. This spooky-themed restaurant offers a menu featuring burgers, snacks, and treats in a playful and ghoulish ambiance that's perfect for both kids and adults seeking a fun dining experience with a frightful twist.",
             "address": "10 rue Willy Goergen",
             "type_list": ["Fast Food", "American"],
             "logo": "/booldonalds.png",
-            "image": "",
+            "image": "https://images.pexels.com/photos/4109136/pexels-photo-4109136.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             "dish_list": [
                 {
                     "name": "BoolCheeseBurger",
@@ -121,10 +124,12 @@
             "password": "GinoVaInCampagna00",
             "email": "PizzeriaDaGino@gmail.com",
             "vat_number": "LU23456789",
+            "phone": "+352 22 14 74 59",
+            "description": "Pizzeria da 'Gino is an authentic Italian eatery known for its delicious pizzas and inviting atmosphere. With a rustic charm and the aroma of freshly baked pies, it's the perfect place to savor traditional Italian flavors in a warm and welcoming setting.",
             "address": "12 Rue Jean Engling, L-1466",
             "type_list": ["Pizzeria", "Italian"],
             "logo": "/pizzeria_da_gino.png",
-            "image": "",
+            "image": "https://images.pexels.com/photos/905847/pexels-photo-905847.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "dish_list": [
                 {
                     "name": "Pizza Margherita",
@@ -174,10 +179,12 @@
             "password": "EscargeoutBestSushi19",
             "email": "FusionBaguette@luxenbourg.fr",
             "vat_number": "LU34567890",
+            "phone": "+352 43 25 89 73",
+            "description": "Fusion Baguette is a French-Asian fusion restaurant where culinary traditions from two continents meet. Here, you can savor a delectable blend of French and Asian flavors in a chic and vibrant ambiance, offering a unique dining experience that transcends borders.",
             "address": "121 Av. De La Faiencerie, L-1511",
             "type_list": ["Chinese", "Asian", "Japanese", "Sushi", "French"],
             "logo": "/fusion_baguette.png",
-            "image": "",
+            "image": "https://images.pexels.com/photos/8951558/pexels-photo-8951558.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1ì",
             "dish_list": [
                 {
                     "name": "Nigiri Salmon Sushi",
@@ -228,10 +235,13 @@
             "password": "OnFireFRFRFR909",
             "email": "FuegoMexican@libero.fr",
             "vat_number": "LU45678901",
+            "phone": "+352 99 13 70 34",
+            "description": 
+            "Me Prendì Fuego is a Mexican fast-food gem known for its fiery flavors and bold spices. With a vibrant and lively atmosphere, it's the perfect spot to indulge in authentic Mexican cuisine that's guaranteed to set your taste buds ablaze.",
             "address": "53a Cote D'eich, L-1450",
             "type_list": ["Mexican"],
             "logo": "/me_prendi_fuego.png",
-            "image": "",
+            "image": "https://images.pexels.com/photos/2092897/pexels-photo-2092897.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "dish_list": [
                 {
                     "name": "Chilaquiles",
@@ -282,10 +292,12 @@
             "password": "BreakingBadBR",
             "email": "GusGus@metanfetamina.fr",
             "vat_number": "LU56789012",
+            "phone": "+352 90 88 35 27",
+            "description": "Los Pollos Hermanos, inspired by the famous chain from Breaking Bad, is not just a fast-food joint; it's an experience that brings the essence of the show to life. With its familiar branding and a vibe straight out of the series, it's the ultimate destination for fans to savor Mexican-inspired delights in a setting that pays homage to the iconic TV show.",
             "address": "464 Route De Longwy, L-4832",
             "type_list": ["Fast Food", "Mexican", "American"],
             "logo": "/los_pollos_hermanos.png",
-            "image": "",
+            "image": "https://media.timeout.com/images/105541804/image.jpg",
             "dish_list": [
                 {
                     "name": "Chicken Wings",
@@ -336,10 +348,12 @@
             "password": "LflBestRegionKBB",
             "email": "TurkishKebab@luxenbourg.fr",
             "vat_number": "LU67890123",
+            "phone": "+352 07 75 22 99",
+            "description": "Turkish Kebab is a culinary oasis that transports you to the bustling streets of Istanbul. Here, you can relish the authentic flavors of tender, perfectly seasoned kebabs and other Turkish delights, all in a cozy and inviting setting reminiscent of Turkey's vibrant food culture.",
             "address": "53a Cote D'eich, L-3254",
             "type_list": ["Kebab", "Turkish", "Arabic"],
             "logo": "/turkish_kebab.png",
-            "image": "",
+            "image": "https://images.pexels.com/photos/6419720/pexels-photo-6419720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "dish_list": [
                 {
                     "name": "Wrap Kebab",
@@ -390,10 +404,13 @@
             "password": "SpenderaiUnSaccoFRFR",
             "email": "ChezChloe@napoli.fr",
             "vat_number": "LU78901234",
+            "description": 
+            "Bistrot Chez Chloe is a charming French bistro that captures the essence of French cuisine and culture. With a menu brimming with delectable French dishes and a cozy, Parisian-inspired atmosphere, it's the ideal destination for savoring classic French flavors in an intimate setting.",
+            "phone": "+352 21 33 54 99",
             "address": "95 Rue De Strasbourg, L-2561",
             "type_list": ["Bistrot", "French"],
             "logo": "/bistrot_chez_chloe.png",
-            "image": "",
+            "image": "https://images.pexels.com/photos/5605617/pexels-photo-5605617.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "dish_list": [
                 {
                     "name": "Escargots",
@@ -440,14 +457,17 @@
             ]
         },
         {
-            "name": "Thai-Food",
+            "name": "Thai Delight",
             "password": "StomachOnFire99",
-            "email": "Thai-Food@luxenbourg.fr",
+            "email": "ThaiDelight@luxenbourg.fr",
             "vat_number": "LU89012345",
+            "phone": "+352 20 23 44 91",
+            "description": 
+            "Thai Delight is a Thai restaurant that takes your taste buds on a journey to Thailand. Offering an array of mouthwatering Thai dishes, it's a place where you can immerse yourself in the rich and aromatic flavors of Thailand while enjoying a welcoming and exotic atmosphere.",
             "address": "67 Avenue De La Gare, L-4130",
             "type_list": ["Thai", "Asian"],
             "logo": "/thai-food.jpg",
-            "image": "",
+            "image": "https://images.pexels.com/photos/6454806/pexels-photo-6454806.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "dish_list": [
                 {
                     "name": "Chicken Satay",
@@ -498,10 +518,13 @@
             "password": "Grosso2006frfr",
             "email": "CustomerService@Cacina.fr",
             "vat_number": "LU87654321",
+            "phone": "+352 88 55 11 96",
+            "description": 
+            "Osteria Cacina is your passport to Italy through pasta. With a menu bursting with authentic Italian pasta dishes, it's a haven for pasta lovers seeking to savor the essence of Italian cuisine. The cozy ambiance adds to the charm, making it the perfect spot to indulge in Italian culinary delights.",            
             "address": "23 Rue De Napoleon, L-1261",
             "type_list": ["Italian"],
             "logo": "/osteria_cacina.png",
-            "image": "",
+            "image": "https://media-cdn.tripadvisor.com/media/photo-s/1e/26/b2/0c/the-best-italian-restaurant.jpg",
             "dish_list": [
                 {
                     "name": "Carbonara",
